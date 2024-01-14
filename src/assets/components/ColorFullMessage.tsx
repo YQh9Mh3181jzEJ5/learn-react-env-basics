@@ -4,7 +4,7 @@ type ColorFullMessageProps = {
   children: string;
 };
 
-const ColorFullMessage = (props: ColorFullMessageProps) => {
+export const ColorFullMessage = (props: ColorFullMessageProps) => {
   console.log("ColorFullMessageProps start");
 
   const { color, children } = props;
@@ -14,5 +14,3 @@ const ColorFullMessage = (props: ColorFullMessageProps) => {
     </div>
   );
 };
-
-export default ColorFullMessage;
