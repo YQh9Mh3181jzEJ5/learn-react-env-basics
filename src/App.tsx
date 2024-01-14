@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ColorFullMessage from "./assets/components/ColorFullMessage";
 
 export const App = () => {
+  console.log("App start");
+
   const [num, setNum] = useState(0);
-  const [isShowFace, setIsShowFace] = useState(true);
+  const [isShowFace, setIsShowFace] = useState(false);
 
   const onclickButton = () => {
     setNum((prev) => prev + 1);
@@ -12,6 +14,16 @@ export const App = () => {
   const onClickToggle = () => {
     setIsShowFace(!isShowFace);
   };
+
+  useEffect(() => {
+    if (num > 0) {
+      if (num % 3 === 0) {
+        isShowFace || setIsShowFace(true);
+      } else {
+        isShowFace && setIsShowFace(false);
+      }
+    }
+  }, [num]);
 
   return (
     <div className="w-screen h-screen bg-gray-900 text-gray-200">

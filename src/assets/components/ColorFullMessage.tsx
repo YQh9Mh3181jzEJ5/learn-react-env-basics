@@ -5,6 +5,8 @@ type ColorFullMessageProps = {
 };
 
 const ColorFullMessage = (props: ColorFullMessageProps) => {
+  console.log("ColorFullMessageProps start");
+
   const { color, children } = props;
   return (
     <div>
